@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胖乖生活 Token 获取</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:disabled {
+            background: #cccccc;
+        }
+        .status-error {
+            color: #f44336;
+        }
+        .status-success {
+            color: #4CAF50;
+        }
+        .status-warning {
+            color: #ff9800;
+        }
+        #responseDisplay {
+            word-break: break-all;
+            margin-top: 15px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>胖乖生活 Token 获取</h2>
+        <div class="input-group">
+            <label for="phoneInput">手机号:</label>
+            <input type="tel" id="phoneInput" placeholder="请输入手机号">
+        </div>
+        <div class="input-group">
+            <label for="verifyInput">验证码:</label>
+            <input type="text" id="verifyInput" placeholder="请输入验证码">
+        </div>
+        <div class="button-group">
+            <button id="sendCodeBtn" onclick="sendPostRequest()">发送验证码</button>
+            <button onclick="verifyCode()">登录</button>
+            <button onclick="copy()">复制Token</button>
+        </div>
+        <div id="uploadStatus"></div>
+        <div id="responseDisplay"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
